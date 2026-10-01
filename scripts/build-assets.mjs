@@ -8,6 +8,10 @@ const output = path.join(root, "dist");
 // Explicit public files only: never recursively copy the repository or assets tree.
 const publicFiles = [
   "index.html",
+  "projects.html",
+  "production.html",
+  "trading.html",
+  "investment-research.html",
   "styles.css",
   "script.js",
   "assets/favicon/original-site-favicon.svg",
