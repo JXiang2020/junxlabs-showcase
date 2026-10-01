@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/wrangler@latest/config-schema.json",
+  "name": "junxlabs-showcase",
+  "main": "src/worker.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "SITE_VISITS",
+      "database_name": "junxlabs-showcase-visits",
+      "database_id": "c939a3e7-4eaf-4dc3-aebe-cc2c59931703"
+    }
+  ]
+}
