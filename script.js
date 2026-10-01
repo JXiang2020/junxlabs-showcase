@@ -14,7 +14,7 @@
     })
     .then(({ visits }) => {
       if (Number.isInteger(visits)) {
-        counter.textContent = `Page views: ${visits} · `;
+        counter.textContent = `Page views: ${visits}`;
       }
     })
     .catch(() => {

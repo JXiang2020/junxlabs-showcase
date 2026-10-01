@@ -36,6 +36,8 @@ li + li { margin-top: 21px; }
 .video-frame { margin: 0; overflow: hidden; border-radius: 8px; background: #101827; box-shadow: 0 15px 35px rgba(20, 44, 93, .13); }
 video { display: block; width: 100%; max-height: 75vh; background: #101827; }
 footer { padding: 2.25rem 0; color: #60718f; background: var(--wash); border-top: 1px solid var(--line); font-size: .92rem; }
+footer .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+#site-visits { margin-left: auto; white-space: nowrap; }
 
 @media (max-width: 640px) {
   .wrap, .narrow { width: min(100% - 32px, 1024px); }
@@ -50,4 +52,6 @@ footer { padding: 2.25rem 0; color: #60718f; background: var(--wash); border-top
   li + li { margin-top: 17px; }
   .slide { border-radius: 5px; }
   .download { text-align: left; }
+  footer .wrap { align-items: flex-start; flex-direction: column; gap: .25rem; }
+  #site-visits { margin-left: 0; }
 }
