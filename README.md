@@ -12,6 +12,8 @@ The repository root must never be used as the static asset directory. Git metada
 
 The Worker entry point remains `src/worker.js`, deployed separately from public assets, with the existing `ASSETS` and `SITE_VISITS` bindings. No D1 migration is needed for this asset-scope change.
 
+Public version URLs are disabled with `preview_urls: false` because historical versions contain the previously uploaded repository files. Do not re-enable them or roll back to those versions; rebuild from the restricted public asset list instead.
+
 ## Local preview
 
 Serve this directory with any static web server, then open `index.html`. No build tools, package manager, or framework are required.
