@@ -1,46 +1,53 @@
 :root {
-  --ink: #142c5d;
-  --blue: #1d4e9d;
-  --muted: #5a6d8f;
-  --line: #dbe3ef;
+  --hero-blue: #214f88;
+  --ink: #1c487f;
+  --blue: #1c4b85;
+  --muted: #d6deeb;
+  --line: #e7ebf1;
   --paper: #ffffff;
-  --wash: #f4f7fb;
+  --wash: #f5f6f8;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; color: #172033; background: var(--paper); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 16px; line-height: 1.65; }
-.wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
-.narrow { width: min(960px, calc(100% - 48px)); }
-.hero { padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(3.25rem, 7vw, 5.5rem); background: linear-gradient(130deg, #f7faff 0%, #edf3fb 100%); border-bottom: 1px solid var(--line); }
-h1, h2 { color: var(--ink); line-height: 1.1; letter-spacing: -.035em; }
-h1 { max-width: 900px; margin: 0; font-size: clamp(2.65rem, 7vw, 5.6rem); font-weight: 760; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: Arial, Helvetica, sans-serif; font-size: 18px; font-weight: 600; line-height: 1.62; }
+.wrap, .narrow { width: min(1024px, calc(100% - 48px)); margin: 0 auto; }
+.hero { padding: 34px 0 33px; background: var(--hero-blue); border: 0; }
+h1, h2 { color: var(--ink); line-height: 1.12; letter-spacing: -.028em; }
+h1 { max-width: 650px; margin: 0; color: #fff; font-size: clamp(2.35rem, 3.2vw, 3.25rem); font-weight: 750; }
 h1 span { display: block; }
-.eyebrow { margin: 1.3rem 0 .35rem; color: var(--blue); font-size: 1.15rem; font-weight: 700; letter-spacing: .03em; }
-.byline { margin: 0; color: var(--muted); font-size: 1rem; }
+.eyebrow { margin: 22px 0 6px; color: var(--muted); font-size: 18px; font-weight: 700; letter-spacing: 0; }
+.byline { margin: 0; color: var(--muted); font-size: 18px; font-weight: 700; }
+.byline a { color: var(--muted); font-weight: 700; }
 a { color: var(--blue); text-underline-offset: .18em; }
-a:hover { color: #0c377b; }
-.section { padding: clamp(3.5rem, 7vw, 6.5rem) 0; }
-.section + .section { border-top: 1px solid var(--line); }
+a:hover { color: #153a69; }
+.section { padding: 78px 0; }
+.section + .section { border-top: 0; }
 .introduction { background: var(--wash); }
-h2 { margin: 0 0 1.65rem; font-size: clamp(1.85rem, 4vw, 2.85rem); font-weight: 720; }
-ul { margin: 0; padding-left: 1.35rem; }
-li + li { margin-top: .75rem; }
+h2 { margin: 0 0 23px; font-size: clamp(1.8rem, 2.1vw, 2.05rem); font-weight: 750; }
+.introduction { padding: clamp(10rem, 11vw, 13.5rem) 0 122px; }
+ul { margin: 0; padding-left: 1.85rem; }
+li { padding-left: 2px; }
+li + li { margin-top: 21px; }
 .slide { margin: 0; overflow: hidden; border: 1px solid #d5dfed; border-radius: 8px; background: #f7f9fc; box-shadow: 0 15px 35px rgba(20, 44, 93, .09); }
 .slide img { display: block; width: 100%; height: auto; }
-.download { margin: 1.3rem 0 0; text-align: right; font-weight: 650; }
-.demo p { max-width: 900px; margin: 0 0 1.75rem; font-size: 1.07rem; }
+.download { margin: 1.3rem 0 0; text-align: right; font-weight: 700; }
+.demo p { max-width: 900px; margin: 0 0 1.75rem; font-size: 1rem; }
 .video-frame { margin: 0; overflow: hidden; border-radius: 8px; background: #101827; box-shadow: 0 15px 35px rgba(20, 44, 93, .13); }
 video { display: block; width: 100%; max-height: 75vh; background: #101827; }
-footer { padding: 2.25rem 0; color: #667693; background: #f4f7fb; border-top: 1px solid var(--line); font-size: .92rem; }
+footer { padding: 2.25rem 0; color: #60718f; background: var(--wash); border-top: 1px solid var(--line); font-size: .92rem; }
 
 @media (max-width: 640px) {
-  .wrap, .narrow { width: min(100% - 32px, 1160px); }
-  .hero { padding-top: 4rem; }
-  .byline span[aria-hidden="true"] { display: none; }
-  .byline a { display: block; width: max-content; margin-top: .25rem; }
-  .section { padding: 3.25rem 0; }
-  body { font-size: 15px; }
+  .wrap, .narrow { width: min(100% - 32px, 1024px); }
+  body { font-size: 16px; line-height: 1.58; }
+  .hero { padding: 29px 0 30px; }
+  h1 { font-size: clamp(2rem, 10vw, 2.65rem); }
+  .eyebrow, .byline { font-size: 16px; }
+  .introduction { padding: 105px 0 74px; }
+  .section { padding: 54px 0; }
+  h2 { margin-bottom: 18px; font-size: 1.72rem; }
+  ul { padding-left: 1.35rem; }
+  li + li { margin-top: 17px; }
   .slide { border-radius: 5px; }
   .download { text-align: left; }
 }
