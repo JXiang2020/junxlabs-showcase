@@ -30,7 +30,6 @@ nav span { color: var(--muted); cursor: default; }
 #site-visits { flex-shrink: 0; min-width: 116px; padding-left: 22px; border-left: 1px solid var(--line); color: var(--muted); font-size: 13px; white-space: nowrap; }
 #site-visits:empty { visibility: hidden; }
 .hero { padding: 18px 0; }
-.eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 14px; font-weight: 600; }
 h1 { margin: 0 0 8px; font-size: clamp(2.25rem, 3vw, 3rem); font-weight: 700; }
 .byline { max-width: 800px; margin: 0; color: var(--muted); font-size: 14px; }
 .byline span { margin-inline: 5px; }
@@ -45,8 +44,16 @@ h1 { margin: 0 0 8px; font-size: clamp(2.25rem, 3vw, 3rem); font-weight: 700; }
 .pillar.active:hover { color: white; }
 .pillar.active:focus-visible { outline-offset: -6px; outline-color: #c2d8eb; }
 .pillar.inactive { background: #e3ebf2; color: var(--navy); }
+.pillar.inactive:hover { border-color: var(--blue); background: #d8e5ef; }
+.page-content { min-height: 340px; }
+.page-description { max-width: 800px; margin: 0; color: var(--muted); }
+.page-panel { padding: 28px 32px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); }
+.page-panel h2 { color: var(--navy); font-size: 24px; }
+.page-panel p { max-width: 800px; margin: 12px 0 20px; }
+.page-panel .release-status { margin: 12px 0 0; color: var(--blue); font-size: 19px; font-weight: 600; }
 .production { border: 1px solid var(--line); border-top: 0; border-radius: 0 0 6px 6px; background: var(--paper); overflow: hidden; }
-.production-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 12px 32px; background: var(--navy); color: white; }
+.pillar-band { display: flex; align-items: center; justify-content: flex-end; height: 52px; padding: 8px 32px; background: var(--navy); color: white; }
+.pillar-band-frame { border-inline: 1px solid var(--line); }
 h2 { margin: 0; color: white; font-size: clamp(1.4rem, 1.8vw, 1.65rem); font-weight: 600; }
 .asset-action { display: inline-flex; align-items: center; justify-content: center; gap: 10px; flex-shrink: 0; padding: 7px 12px; border: 1px solid var(--line); border-radius: 4px; color: var(--blue); font-size: 13px; font-weight: 600; line-height: 1.5; text-decoration: none; }
 .asset-action:hover { border-color: var(--blue); background: var(--wash); }
@@ -96,8 +103,9 @@ footer a { color: var(--muted); }
   #site-visits { margin-left: auto; }
   .pillar { padding: 18px 20px; }
   .pillar-title { font-size: 18px; }
-  .production-heading { padding: 12px 24px; }
+  .pillar-band { padding-inline: 24px; }
   .production-body { padding: 24px; }
+  .page-panel { padding: 24px; }
   .asset-heading { flex-wrap: wrap; align-items: flex-start; }
   .demo-evidence { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .featured-demo { grid-column: 1 / -1; }
@@ -110,7 +118,6 @@ footer a { color: var(--muted); }
   .pillar { min-height: 74px; padding: 18px 20px; border: 1px solid var(--line); border-radius: 4px; }
   /* Put the selected section next to its expanded panel on narrow screens. */
   .pillar.active { order: 1; border-bottom: 0; border-radius: 4px 4px 0 0; }
-  .production-heading { align-items: flex-start; flex-direction: column; gap: 14px; }
   .overview-cards { grid-template-columns: 1fr; gap: 16px; }
   .demo-evidence { grid-template-columns: 1fr; gap: 24px; }
   .evidence-column + .evidence-column { padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--line); }
@@ -126,13 +133,39 @@ footer a { color: var(--muted); }
   .byline { line-height: 1.7; }
   .showcase-background { padding-top: 20px; padding-bottom: 28px; }
   .pillar-title { font-size: 17px; }
-  .production-heading { padding: 12px 20px; }
+  .pillar-band { padding-inline: 20px; }
   h2 { font-size: 23px; }
   .overview-card { padding: 20px; }
   .production-body { padding: 22px 18px; }
+  .page-panel { padding: 22px 18px; }
   .asset-heading { gap: 12px; }
   footer .wrap { align-items: flex-start; flex-direction: column; gap: 8px; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+}
+
+/* Project pages share the site framework and keep the footer at the page edge. */
+body#top { display: flex; flex-direction: column; min-height: 100vh; }
+body#top main { display: flex; flex: 1; flex-direction: column; }
+body#top .page-content { flex: 1; }
+.showcase-status { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 300px; max-width: 960px; margin: 28px auto 0; padding: 40px 32px; text-align: center; }
+.showcase-status .release-status { margin: 0; color: var(--navy); font-size: 28px; }
+.showcase-status .status-copy { max-width: 640px; margin: 18px 0 0; color: var(--muted); }
+.project-catalog { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.project-card { display: flex; flex-direction: column; align-items: flex-start; padding: 28px 24px; border: 1px solid var(--line); border-radius: 6px; background: var(--paper); }
+.project-card h2 { color: var(--navy); font-size: clamp(20px, 1.5vw, 24px); line-height: 1.3; }
+.project-description { margin: 16px 0 0; color: var(--muted); }
+.project-status { margin: auto 0 24px; padding-top: 24px; color: var(--muted); font-size: 14px; }
+.project-status strong { color: var(--navy); font-weight: 600; }
+.project-catalog .project-card[aria-labelledby="project-01"] { background: #f0f6fb; border-color: #8aaac5; }
+.project-catalog .project-status strong::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border: 1.5px solid var(--muted); border-radius: 50%; vertical-align: .1em; }
+.project-catalog .project-card[aria-labelledby="project-01"] .project-status strong::before { border-color: var(--blue); background: var(--blue); }
+.project-catalog .project-card:not([aria-labelledby="project-01"]) .project-status strong { color: var(--muted); }
+.project-catalog .project-card[aria-labelledby="project-01"] .asset-action { border-color: #8aaac5; background: #e0ecf6; color: var(--navy); }
+.project-catalog .project-card[aria-labelledby="project-01"] .asset-action:hover { border-color: var(--blue); background: #d5e5f2; }
+@media (max-width: 800px) {
+  .showcase-status { min-height: 260px; margin-top: 24px; padding: 32px 20px; }
+  .project-catalog { grid-template-columns: 1fr; gap: 16px; }
+  .project-card { padding: 24px 20px; }
 }
