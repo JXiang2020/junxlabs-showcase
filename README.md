@@ -2,7 +2,15 @@
 
 This repository is the source of truth for the static public showcase at **junxlabs.com**. It presents Jun Xiang's AI-powered production workflow system, its controls, and a course-production demo.
 
-Deployment will be configured separately through Cloudflare. The original ChatGPT Site remains online temporarily as the migration fallback until the Cloudflare deployment is verified.
+The existing Cloudflare Workers Builds connection deploys `main` with `npx wrangler deploy`.
+
+## Deployment assets
+
+Wrangler runs `node scripts/build-assets.mjs` before deployment and uploads only `dist/`. The build recreates that directory from an explicit list of public files: `index.html`, `styles.css`, `script.js`, the favicon, the two diagram images, the PDF, and the demo video. Their contents and public URLs are preserved. Add any future public asset deliberately to this list.
+
+The repository root must never be used as the static asset directory. Git metadata, environment files, CI/editor configuration, source maps, caches, temporary files, tests, Worker source, migrations, and documentation are outside the deployment artifact. `.gitignore` keeps generated directories out of Git; the build allowlist and `assets.directory` control upload scope.
+
+The Worker entry point remains `src/worker.js`, deployed separately from public assets, with the existing `ASSETS` and `SITE_VISITS` bindings. No D1 migration is needed for this asset-scope change.
 
 ## Local preview
 
