@@ -1,0 +1,37 @@
+{
+  "status": "Working drafts. Not approved for publication.",
+  "baseline": "2026-10-01",
+  "archive": {
+    "name": "Trading_Showcase_v3_v4_backup.tar.xz",
+    "bytes": 22908,
+    "sha256": "3f4d3c8572394e77b875d81cbf2f8692c073efd8f67c8a82e4faa7c868166cc7",
+    "git_blob_sha": "8a4a119858906c126e8b296a933474bca621c1cb"
+  },
+  "archived_files": [
+    {
+      "name": "JunXLabs_Trading_Investment_and_AI_4pages_v3.pptx",
+      "bytes": 189570,
+      "sha256": "a8182c91d37982d96699c7ee30f16ee1ccd4c1b15fbaa4d216fb99c16cee21d5"
+    },
+    {
+      "name": "JunXLabs_Trading_Investment_and_AI_4pages_v4.pptx",
+      "bytes": 180325,
+      "sha256": "85a507e911f86e88811e51c59965049e122d4af9d93fc338ca78e1d41b68882a"
+    },
+    {
+      "name": "Trading_Showcase_v3_Content.md",
+      "bytes": 3459,
+      "sha256": "fc1fe1f7cd42558854eeee8248f327ca376297ae5050b9e7ab5747b79cee8950"
+    },
+    {
+      "name": "Trading_Showcase_v4_Content.md",
+      "bytes": 6212,
+      "sha256": "03cba7e06709a822f6569fc4caa678a1f9c15b0eb90e80b6cebe26760adaeca1"
+    },
+    {
+      "name": "revise_v4.py",
+      "bytes": 11179,
+      "sha256": "6dceaf4367189b349ad02a5aebabde6f6508f02a34397bcddd24e220f8bff0f1"
+    }
+  ]
+}
