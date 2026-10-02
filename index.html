@@ -9,37 +9,28 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body id="home">
-    <a class="skip-link" href="#projects">Skip to projects</a>
+    <a class="skip-link" href="#projects">Skip to pillars</a>
     <header class="site-header">
       <div class="wrap header-row">
         <a class="identity" href="#home" aria-label="JunXLabs — Home">
-          <strong>JunXLabs</strong>
-          <span>Applied AI Systems</span>
+          <span class="brand-logo"><img src="assets/images/junxlabs-logo.jpg" width="1530" height="352" alt="JunXLabs"></span>
         </a>
         <nav aria-label="Main navigation">
           <a href="/" aria-current="page">Home</a>
-          <a href="/projects.html">Projects</a>
           <!-- These sections have no routes yet. Keep them visible without dead links. -->
           <span aria-disabled="true">Discussion</span>
           <span aria-disabled="true">About</span>
         </nav>
         <span id="site-visits" aria-live="polite"></span>
+        <p class="byline"><span class="identity-line">Applied AI Systems</span><span class="identity-line">Jun Xiang, Ph.D. in Economics <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/jun-xiang-45b438aa/" target="_blank" rel="noopener noreferrer" aria-label="Jun Xiang's LinkedIn profile (opens in a new tab)">LinkedIn Profile</a></span></p>
       </div>
     </header>
     <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="wrap hero-row">
-          <div>
-            <h1 id="hero-title">Applied AI Systems</h1>
-            <p class="byline">Developed and operated by Jun Xiang, Ph.D. in Economics <span aria-hidden="true">·</span> <a href="https://www.linkedin.com/in/jun-xiang-45b438aa/" target="_blank" rel="noopener noreferrer" aria-label="Jun Xiang's LinkedIn profile (opens in a new tab)">LinkedIn Profile</a></p>
-          </div>
-        </div>
-      </section>
       <div class="showcase-background">
         <div class="wrap" id="projects">
-          <div class="pillars" role="group" aria-label="Primary AI sections">
+          <div class="pillars" role="navigation" aria-label="AI showcase pillars">
             <a class="pillar active" href="/#production" aria-current="true" aria-controls="production">
-              <span class="pillar-title"><span class="pillar-number">01</span> AI Production &amp; Risk Control</span>
+              <h1 class="pillar-title"><span class="pillar-number">01</span> AI Production &amp; Risk Control</h1>
             </a>
             <a class="pillar inactive" href="/trading.html">
               <span class="pillar-title"><span class="pillar-number">02</span> AI Trading Decision Systems</span>
@@ -150,7 +141,6 @@
     </main>
     <footer>
       <div class="wrap">
-        <span>JunXLabs · Applied AI Systems</span>
         <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
