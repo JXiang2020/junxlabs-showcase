@@ -18,6 +18,7 @@ const publicFiles = [
   "assets/docs/AI_Powered_Workflow_System_V6.pdf",
   "assets/images/agent-harness-architecture.png",
   "assets/images/system-overview.png",
+  "assets/images/junxlabs-logo.jpg",
   "assets/video/dbm201-course-production-demo.mp4"
 ];
 
