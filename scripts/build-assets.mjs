@@ -16,9 +16,11 @@ const publicFiles = [
   "script.js",
   "assets/favicon/original-site-favicon.svg",
   "assets/docs/AI_Powered_Workflow_System_V6.pdf",
+  "assets/docs/JunX_Dissertation_Public_Showcase.pdf",
   "assets/images/agent-harness-architecture.png",
   "assets/images/system-overview.png",
   "assets/images/junxlabs-logo.jpg",
+  "assets/images/junx-dissertation-public-cover.png",
   "assets/video/dbm201-course-production-demo.mp4"
 ];
 
