@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A dedicated showcase for AI Trading Decision Systems.">
+    <meta name="description" content="An AI trading decision framework for event-driven investment opportunities, supported by portfolio context, market evidence, and eight specialized AI agents.">
     <title>AI Trading Decision Systems | JunXLabs</title>
     <link rel="icon" type="image/svg+xml" href="assets/favicon/original-site-favicon.svg">
     <link rel="stylesheet" href="styles.css">
@@ -42,10 +42,137 @@
           <div class="pillar-band-frame" aria-hidden="true">
             <div class="pillar-band"></div>
           </div>
-          <section class="page-panel showcase-status" aria-labelledby="release-title">
-            <h2 id="release-title" class="release-status">Release Soon</h2>
-            <p class="status-copy">This showcase is currently under development.</p>
-          </section>
+          <div class="trading-showcase">
+            <div class="production-body">
+              <section aria-labelledby="investment-title">
+                <h2 id="investment-title">Event-Driven Investment Decisions with AI</h2>
+                <p class="trading-intro">This AI trading decision system identifies and evaluates event-driven investment opportunities. It uses live portfolio context, market evidence, and accumulated trading knowledge, with parts of the analytical framework drawn from my Ph.D. dissertation.</p>
+                <ol class="trading-process" aria-label="Three-step investment process" role="list">
+                  <li>
+                    <span class="trading-step-number" aria-hidden="true">1</span>
+                    <div>
+                      <h3>Identify Potential Opportunities</h3>
+                      <p>Detect event-driven opportunities around earnings, FOMC decisions, company milestones, and other catalysts by analyzing expectation gaps, information diffusion, regime shifts and market repricing.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="trading-step-number" aria-hidden="true">2</span>
+                    <div>
+                      <h3>Test Whether an Edge Remains</h3>
+                      <p>Compare new evidence with what is already priced in, challenge the thesis, and define what would invalidate it.</p>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="trading-step-number" aria-hidden="true">3</span>
+                    <div>
+                      <h3>Translate the View into a Portfolio Decision</h3>
+                      <p>Choose whether and how to act—instrument, timing, size and hedge—within existing portfolio exposure and downside risk.</p>
+                    </div>
+                  </li>
+                </ol>
+              </section>
+              <section class="trading-architecture" aria-labelledby="trading-architecture-title">
+                <h2 id="trading-architecture-title">AI System Architecture</h2>
+                <p class="trading-intro">Live context and source evidence feed the agents; investment knowledge provides reusable cases, mechanisms and risk lessons.</p>
+                <section class="trading-knowledge" aria-labelledby="knowledge-title">
+                  <h3 id="knowledge-title">INVESTMENT KNOWLEDGE LAYER</h3>
+                  <dl class="trading-knowledge-rows">
+                    <div>
+                      <dt>Five Libraries:</dt>
+                      <dd>Books, papers &amp; institutional research | Personal Cases | Opportunity Patterns | Execution Playbook | Risk &amp; Failure Modes</dd>
+                    </div>
+                    <div>
+                      <dt>RAG:</dt>
+                      <dd>Retrieves original source evidence, decision records and counterexamples.</dd>
+                    </div>
+                    <div>
+                      <dt>Wiki:</dt>
+                      <dd>Structures claims and relationships.</dd>
+                    </div>
+                  </dl>
+                </section>
+                <div class="trading-flow">
+                  <section class="trading-flow-side" aria-labelledby="context-title">
+                    <h3 id="context-title">CONTEXT &amp; SOURCE EVIDENCE</h3>
+                    <dl class="trading-evidence-list">
+                      <div>
+                        <dt>Live Portfolio State</dt>
+                        <dd>Broker snapshot, cash, holdings, buying power</dd>
+                      </div>
+                      <div>
+                        <dt>Market / Event Evidence</dt>
+                        <dd>Prices, filings, news and catalysts</dd>
+                      </div>
+                      <div>
+                        <dt>Source Evidence</dt>
+                        <dd>Books, research, cases and personal records</dd>
+                      </div>
+                    </dl>
+                  </section>
+                  <span class="trading-flow-arrow" aria-hidden="true">→</span>
+                  <section class="trading-flow-agents" aria-labelledby="architecture-agents-title">
+                    <h3 id="architecture-agents-title">SPECIALIZED AI AGENTS</h3>
+                    <div class="trading-agent-cards">
+                      <section class="trading-agent-card" aria-labelledby="macro-agent-title">
+                        <h4 id="macro-agent-title">Macro Agent</h4>
+                        <p>Assesses rates, liquidity, and cross-asset conditions.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="company-agent-title">
+                        <h4 id="company-agent-title">Company &amp; Event Agent</h4>
+                        <p>Evaluates fundamentals, catalysts, and event expectations.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="technical-agent-title">
+                        <h4 id="technical-agent-title">Technical Agent</h4>
+                        <p>Tests price structure, volume, levels, and retests.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="regime-agent-title">
+                        <h4 id="regime-agent-title">Regime Agent</h4>
+                        <p>Identifies shifts in pricing drivers and market sensitivity.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="expectations-agent-title">
+                        <h4 id="expectations-agent-title">Market Expectations Agent</h4>
+                        <p>Tests what price reflects and what may remain mispriced.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="trading-agent-title">
+                        <h4 id="trading-agent-title">Trading Agent</h4>
+                        <p>Frames the decision and integrates competing evidence.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="red-team-agent-title">
+                        <h4 id="red-team-agent-title">Red-Team Agent</h4>
+                        <p>Challenges the thesis, weak evidence, and tail scenarios.</p>
+                      </section>
+                      <section class="trading-agent-card" aria-labelledby="portfolio-agent-title">
+                        <h4 id="portfolio-agent-title">Portfolio &amp; Kelly Agent</h4>
+                        <p>Evaluates exposure, sizing, scenarios, and portfolio impact.</p>
+                      </section>
+                    </div>
+                  </section>
+                  <span class="trading-flow-arrow" aria-hidden="true">→</span>
+                  <section class="trading-flow-side" aria-labelledby="decision-output-title">
+                    <h3 id="decision-output-title">DECISION OUTPUT</h3>
+                    <dl class="trading-evidence-list">
+                      <div>
+                        <dt>Decision Path</dt>
+                        <dd>Research, watch, no edge or trade candidate</dd>
+                      </div>
+                      <div>
+                        <dt>Trade Alternatives</dt>
+                        <dd>Stock, options, spreads or no action</dd>
+                      </div>
+                      <div>
+                        <dt>Portfolio Implications</dt>
+                        <dd>Exposure, sizing and scenario risk</dd>
+                      </div>
+                      <div>
+                        <dt>Human Decision Record</dt>
+                        <dd>Action, rationale, outcome and review</dd>
+                      </div>
+                    </dl>
+                  </section>
+                </div>
+              </section>
+            </div>
+          </div>
         </div>
       </div>
     </main>
