@@ -6,6 +6,8 @@
   --line: #d5dfe8;
   --paper: #ffffff;
   --wash: #f1f5f8;
+  --section-title-size: 24px;
+  --section-divider: 2px solid #a8bdce;
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scrollbar-gutter: stable; }
@@ -62,7 +64,7 @@ h2 { margin: 0; color: white; font-size: clamp(1.4rem, 1.8vw, 1.65rem); font-wei
 .pdf-link:hover { color: white; border-color: #c2d8eb; background: transparent; }
 .pdf-link:focus-visible { outline-color: #c2d8eb; }
 .production-body { padding: 28px 32px 34px; }
-.overview, .lifecycle, .demo { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); }
+.overview, .lifecycle, .demo { margin-top: 32px; padding-top: 28px; border-top: var(--section-divider); }
 .overview > h3 { margin-bottom: 18px; }
 .overview-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
 .overview-card { padding: 22px 24px; border: 1px solid var(--line); border-radius: 3px; background: var(--wash); }
@@ -72,7 +74,7 @@ h2 { margin: 0; color: white; font-size: clamp(1.4rem, 1.8vw, 1.65rem); font-wei
 .overview-card li + li { margin-top: 8px; }
 .overview-card li::marker { color: var(--blue); }
 .asset-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 16px; }
-h3 { margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -.015em; }
+h3 { margin: 0; font-size: var(--section-title-size); font-weight: 600; letter-spacing: -.015em; }
 .slide { margin: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: #f4f6fa; }
 .slide img { display: block; width: 100%; height: auto; }
 .demo { min-width: 0; }
@@ -178,4 +180,53 @@ footer .wrap > a { flex-shrink: 0; }
   .identity .brand-logo { width: 180px; }
   .header-row { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; min-height: 0; padding-block: 14px; }
   .header-row nav { grid-column: 1 / -1; grid-row: 3; justify-self: start; justify-content: flex-start; margin: 0; }
+}
+
+/* Pillar 2 uses the shared palette, content padding, and type scale. */
+.trading-showcase { --line: #e6ecf1; --wash: #f8fafc; border: 1px solid var(--line); border-top: 0; border-radius: 0 0 6px 6px; background: var(--paper); font-size: 19px; line-height: 1.45; }
+.trading-showcase > .production-body { padding-top: 36px; }
+.trading-showcase h2 { color: var(--navy); font-size: var(--section-title-size); font-weight: 700; letter-spacing: -.025em; }
+.trading-showcase h3 { font-size: inherit; line-height: inherit; }
+.trading-showcase h4 { margin: 0; font-size: inherit; font-weight: 600; line-height: inherit; }
+.trading-showcase .trading-intro { max-width: 1100px; margin: 16px 0 28px; }
+.trading-showcase .trading-process { margin: 0; padding: 0; list-style: none; }
+.trading-showcase .trading-process li { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: 14px; }
+.trading-showcase .trading-process li + li { margin-top: 28px; }
+.trading-showcase .trading-step-number { color: var(--blue); font-weight: 600; }
+.trading-showcase .trading-process p { margin: 8px 0 0; }
+.trading-showcase .trading-architecture { margin-top: 48px; padding-top: 40px; border-top: var(--section-divider); }
+.trading-showcase .trading-knowledge, .trading-showcase .trading-flow-side, .trading-showcase .trading-flow-agents { padding: 20px; border: 1px solid #c1cfdb; border-radius: 3px; background: #f1f5f8; }
+.trading-showcase .trading-knowledge h3, .trading-showcase .trading-flow h3 { font-weight: 700; letter-spacing: .015em; }
+.trading-showcase dt { color: var(--navy); font-weight: 600; }
+.trading-showcase .trading-knowledge-rows { display: grid; gap: 12px; margin: 16px 0 0; }
+.trading-showcase .trading-knowledge-rows > div { display: grid; grid-template-columns: 136px minmax(0, 1fr); gap: 4px 16px; }
+.trading-showcase .trading-knowledge-rows dd { margin: 0; }
+.trading-showcase .trading-flow { display: grid; grid-template-columns: minmax(0, 1fr) 24px minmax(0, 2.1fr) 24px minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 28px; }
+.trading-showcase .trading-flow > section { min-width: 0; }
+.trading-showcase .trading-flow-arrow { justify-self: center; color: var(--muted); line-height: 1; }
+.trading-showcase .trading-evidence-list { margin: 20px 0 0; }
+.trading-showcase .trading-evidence-list > div + div { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+.trading-showcase .trading-evidence-list dd { margin: 6px 0 0; }
+.trading-showcase .trading-agent-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.trading-showcase .trading-agent-card { min-width: 0; padding: 18px; border: 1px solid var(--line); border-radius: 3px; background: var(--paper); }
+.trading-showcase .trading-agent-card p { margin: 10px 0 0; }
+@media (max-width: 1100px) {
+  .trading-showcase .trading-flow { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .trading-showcase .trading-flow-arrow { transform: rotate(90deg); }
+  .trading-showcase .trading-evidence-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .trading-showcase .trading-evidence-list > div + div { margin: 0; padding: 0; border: 0; }
+}
+@media (max-width: 800px) {
+  .trading-showcase > .production-body { padding-top: 28px; }
+  .trading-showcase .trading-architecture { margin-top: 40px; padding-top: 32px; }
+}
+@media (max-width: 600px) {
+  .trading-showcase .trading-knowledge-rows > div { grid-template-columns: minmax(0, 1fr); }
+  .trading-showcase .trading-agent-cards, .trading-showcase .trading-evidence-list { grid-template-columns: minmax(0, 1fr); }
+  .trading-showcase .trading-evidence-list { gap: 0; }
+  .trading-showcase .trading-evidence-list > div + div { margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .trading-showcase .trading-knowledge, .trading-showcase .trading-flow-side, .trading-showcase .trading-flow-agents { padding: 20px 16px; }
+  .trading-showcase .trading-process li { grid-template-columns: 18px minmax(0, 1fr); gap: 10px; }
 }
