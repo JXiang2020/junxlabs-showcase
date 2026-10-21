@@ -71,6 +71,20 @@
                   </li>
                 </ol>
               </section>
+              <section class="trading-interface-preview" aria-labelledby="interface-preview-title">
+                <div class="asset-heading">
+                  <h2 id="interface-preview-title">AI Trading Decision System Demo</h2>
+                </div>
+                <figure class="slide">
+                  <button class="trading-preview-trigger" type="button" aria-label="View AI Trading Decision System dashboard fullscreen" aria-haspopup="dialog" aria-controls="trading-fullscreen-viewer">
+                    <img src="assets/images/ai-trading-decision-system-dashboard.png" width="1672" height="941" alt="AI Trading Decision System dashboard showing a TSLA analysis, decision card, portfolio context, and Technical Agent evidence.">
+                  </button>
+                  <figcaption>Illustrative interface. Account figures are simulated.</figcaption>
+                </figure>
+                <div class="trading-fullscreen-viewer" id="trading-fullscreen-viewer" role="dialog" aria-modal="true" aria-label="AI Trading Decision System dashboard fullscreen view" tabindex="-1" hidden>
+                  <img src="assets/images/ai-trading-decision-system-dashboard.png" width="1672" height="941" alt="AI Trading Decision System dashboard showing a TSLA analysis, decision card, portfolio context, and Technical Agent evidence.">
+                </div>
+              </section>
               <section class="trading-architecture" aria-labelledby="trading-architecture-title">
                 <h2 id="trading-architecture-title">AI System Architecture</h2>
                 <p class="trading-intro">Live context and source evidence feed the agents; investment knowledge provides reusable cases, mechanisms and risk lessons.</p>
@@ -182,5 +196,6 @@
       </div>
     </footer>
     <script src="script.js" defer></script>
+    <script src="trading.js" defer></script>
   </body>
 </html>
