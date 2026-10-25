@@ -28,7 +28,9 @@ Serve this directory with any static web server, then open `index.html`. No buil
 
 ## Visit counter
 
-The header's visit counter is served by the same Cloudflare Worker at `/api/visits`. It uses the D1 database `junxlabs-showcase-visits`, attached to the Worker as `SITE_VISITS`. Normal visits use `POST` for one atomic SQL increment; `GET` reads the current count without incrementing it. The server stores no cookies, visitor identifiers, fingerprints, or third-party analytics data.
+The header's visit counter is served by the same Cloudflare Worker at `/api/visits`. It uses the D1 database `junxlabs-showcase-visits`, attached to the Worker as `SITE_VISITS`. Normal visits use `POST` for one atomic SQL increment; `GET` reads the current count without incrementing it. The D1 database stores no cookies, visitor identifiers, fingerprints, or third-party analytics data.
+
+The Worker secret `EXCLUDED_VISITOR_IPS` contains comma- or whitespace-separated public IP addresses whose `POST` requests should only read the count. Keep the addresses in Cloudflare's encrypted Worker secret, never in this repository or D1. Cloudflare supplies the `CF-Connecting-IP` request header used for comparison. This excludes everyone sharing an address; update the secret when the owner's public IPv4 or IPv6 address changes. Requests without a matching address continue to increment normally.
 
 To exclude the site owner's future visits on a browser, open `https://junxlabs.com/?exclude_my_visits=1` once in that browser. The setting is stored in that browser's local storage, shared across site pages; it does not identify visits from another browser or device. Open `https://junxlabs.com/?exclude_my_visits=0` to resume counting. The setting URL is removed from the address bar after it is applied. Past anonymous visits cannot be distinguished or subtracted.
 

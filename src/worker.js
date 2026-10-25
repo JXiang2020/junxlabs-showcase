@@ -3,6 +3,12 @@ const JSON_HEADERS = {
   "cache-control": "no-store"
 };
 
+function isExcludedVisitor(request, env) {
+  const visitorIp = request.headers.get("CF-Connecting-IP")?.toLowerCase();
+  return Boolean(visitorIp && env.EXCLUDED_VISITOR_IPS?.split(/[\s,]+/)
+    .some((ip) => ip.toLowerCase() === visitorIp));
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
@@ -13,10 +19,11 @@ export default {
       }
 
       try {
+        const shouldIncrement = request.method === "POST" && !isExcludedVisitor(request, env);
         const row = await env.SITE_VISITS
-          .prepare(request.method === "GET"
-            ? "SELECT visits FROM site_visits WHERE id = 1"
-            : "UPDATE site_visits SET visits = visits + 1 WHERE id = 1 RETURNING visits")
+          .prepare(shouldIncrement
+            ? "UPDATE site_visits SET visits = visits + 1 WHERE id = 1 RETURNING visits"
+            : "SELECT visits FROM site_visits WHERE id = 1")
           .first();
 
         if (!row || !Number.isInteger(row.visits)) {
