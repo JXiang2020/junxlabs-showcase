@@ -8,13 +8,15 @@ export default {
     const url = new URL(request.url);
 
     if (url.pathname === "/api/visits") {
-      if (request.method !== "POST") {
-        return new Response(null, { status: 405, headers: { Allow: "POST" } });
+      if (request.method !== "GET" && request.method !== "POST") {
+        return new Response(null, { status: 405, headers: { Allow: "GET, POST" } });
       }
 
       try {
         const row = await env.SITE_VISITS
-          .prepare("UPDATE site_visits SET visits = visits + 1 WHERE id = 1 RETURNING visits")
+          .prepare(request.method === "GET"
+            ? "SELECT visits FROM site_visits WHERE id = 1"
+            : "UPDATE site_visits SET visits = visits + 1 WHERE id = 1 RETURNING visits")
           .first();
 
         if (!row || !Number.isInteger(row.visits)) {
